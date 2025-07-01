@@ -1,0 +1,41 @@
+# Taken from Laclede's LAN
+# https://github.com/LacledesLAN/gamesvr-cssource-freeplay/blob/b914f00d23373d7a3dea00887376e998da870ba4/.gitignore
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+
+
+### Linux Cruft ###
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+
+### macOS Cruft ###
+.AppleDouble
+._*
+.com.apple.timemachine.donotpresent
+.DocumentRevisions-V100
+.DS_Store
+.fseventsd
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+
+### Windows Cruft ###
+*.stackdump
+*.lnk
+[Dd]esktop.ini
+ehthumbs.db
+ehthumbs_vista.db
+Thumbs.db
