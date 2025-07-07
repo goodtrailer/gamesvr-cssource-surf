@@ -5,7 +5,7 @@ FROM lacledeslan/gamesvr-cssource AS cssource
 FROM debian:bookworm-slim AS addons
 
 RUN apt-get update \
-    && apt-get install -y libarchive-tools git
+    && apt-get install -y libarchive-tools
 
 RUN mkdir -p /app/cstrike
 
@@ -42,11 +42,11 @@ ADD https://github.com/GAMMACASE/HeadBugFix/releases/download/1.0.0/headbugfix_1
 RUN bsdtar -xvf /headbugfix.zip -C /app/cstrike
 
 # DynamicChannels (2024.720.0)
-RUN git clone https://github.com/Vauff/DynamicChannels \
-    && cd DynamicChannels \
-    && git checkout 9502f2b \
-    && cd .. \
-    && mv DynamicChannels/plugins/DynamicChannels.smx /app/cstrike/addons/sourcemod/plugins
+ADD https://github.com/Vauff/DynamicChannels/archive/9502f2b2798bb6c8e1cf08fa3e35d678366d8473.zip /dynamicchannels.zip
+RUN mkdir temp \
+    && bsdtar -xvf /dynamicchannels.zip --strip-components=1 -C /temp \
+    && mv /temp/plugins/DynamicChannels.smx /app/cstrike/addons/sourcemod/plugins \
+    && rm -rf temp
 
 # sm_closestpos (v1.1.1)
 ADD https://github.com/rtldg/sm_closestpos/releases/download/v1.1.1/sm_closestpos-sm1.10-ubuntu-22.04-f848dfc.zip /sm_closestpos.zip
