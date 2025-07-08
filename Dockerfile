@@ -21,8 +21,8 @@ RUN bsdtar -xvf /sourcemod.tar.gz -C /app/cstrike
 ADD https://github.com/ErikMinekus/sm-ripext/releases/download/1.3.1/sm-ripext-1.3.1-linux.zip /sm-ripext.zip
 RUN bsdtar -xvf /sm-ripext.zip -C /app/cstrike
 
-# shavit-bhoptimer (v3.5.1 - goodtrailer fork)
-ADD https://github.com/goodtrailer/bhoptimer/releases/download/v3.5.1/bhoptimer.zip /shavit-bhoptimer.zip
+# shavit-bhoptimer (v3.5.1-hotfix1 - goodtrailer fork)
+ADD https://github.com/goodtrailer/bhoptimer/releases/download/v3.5.1-hotfix1/bhoptimer.zip /shavit-bhoptimer.zip
 RUN bsdtar -xvf /shavit-bhoptimer.zip -C /app/cstrike
 
 # shavit-myreplay (v1.0.4)
