@@ -29,8 +29,8 @@ RUN bsdtar -xvf /shavit-bhoptimer.zip -C /app/cstrike
 ADD https://github.com/BoomShotKapow/shavit-myreplay/releases/download/1.0.4/shavit-myreplay-1.0.4-sm1.12.x.zip /shavit-myreplay.zip
 RUN bsdtar -xvf /shavit-myreplay.zip -C /app/cstrike/addons/sourcemod
 
-# shavit-discord (v1.4)
-ADD https://github.com/goodtrailer/shavit-discord/releases/download/v1.4/shavit-discord.zip /shavit-discord.zip
+# shavit-discord (v1.4-hotfix1 - goodtrailer fork)
+ADD https://github.com/goodtrailer/shavit-discord/releases/download/v1.4-hotfix1/shavit-discord.zip /shavit-discord.zip
 RUN bsdtar -xvf /shavit-discord.zip -C /app/cstrike
 
 # MomSurfFix2 (v1.1.5)
