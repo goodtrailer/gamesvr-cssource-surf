@@ -1,6 +1,6 @@
 shopt -s globstar
 
-image="ghcr.io/goodtrailer/gamesvr-cssource-surf:2025.707.0"
+image="ghcr.io/goodtrailer/gamesvr-cssource-surf:2025.708.0"
 
 sudo docker pull "${image}"
 
@@ -10,18 +10,27 @@ for file in private/*; do
 done
 
 file_mounts=""
+cd private
 
-for file in private/cfg/**; do
+for file in ./cfg/**; do
     [ -e "${file}" ] || continue
-    file_mounts="${file_mounts} --mount type=bind,src=./${file},dst=/app/cstrike/cfg/$(basename -- ${file}) \\
+    if test -d "${file}"; then
+        continue
+    fi
+    file_mounts="${file_mounts} --mount type=bind,src=./private/${file},dst=/app/cstrike/${file} \\
     "
 done
 
-for file in private/configs/**; do
+for file in ./configs/**; do
     [ -e "${file}" ] || continue
-    file_mounts="${file_mounts} --mount type=bind,src=./${file},dst=/app/cstrike/addons/sourcemod/configs/$(basename -- ${file}) \\
+    if test -d "${file}"; then
+        continue
+    fi
+    file_mounts="${file_mounts} --mount type=bind,src=./private/${file},dst=/app/cstrike/addons/sourcemod/${file} \\
     "
 done
+
+cd ..
 
 cmd="
 sudo docker run -it --rm --net=host \\
