@@ -23,6 +23,24 @@ for file in ./cfg/**; do
     "
 done
 
+for file in ./materials/**; do
+    [ -e "${file}" ] || continue
+    if test -d "${file}"; then
+        continue
+    fi
+    file_mounts="${file_mounts} --mount type=bind,src=./private/${file},dst=/app/cstrike/${file} \\
+    "
+done
+
+for file in ./models/**; do
+    [ -e "${file}" ] || continue
+    if test -d "${file}"; then
+        continue
+    fi
+    file_mounts="${file_mounts} --mount type=bind,src=./private/${file},dst=/app/cstrike/${file} \\
+    "
+done
+
 for file in ./configs/**; do
     [ -e "${file}" ] || continue
     if test -d "${file}"; then
