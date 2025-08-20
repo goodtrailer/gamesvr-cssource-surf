@@ -14,6 +14,15 @@ done
 file_mounts=""
 cd private
 
+for file in ./addons/**; do
+    [ -e "${file}" ] || continue
+    if test -d "${file}"; then
+        continue
+    fi
+    file_mounts="${file_mounts} --mount type=bind,src=./private/${file},dst=/app/cstrike/${file} \\
+    "
+done
+
 for file in ./cfg/**; do
     [ -e "${file}" ] || continue
     if test -d "${file}"; then
@@ -41,21 +50,12 @@ for file in ./models/**; do
     "
 done
 
-for file in ./configs/**; do
+for file in ./sound/**; do
     [ -e "${file}" ] || continue
     if test -d "${file}"; then
         continue
     fi
-    file_mounts="${file_mounts} --mount type=bind,src=./private/${file},dst=/app/cstrike/addons/sourcemod/${file} \\
-    "
-done
-
-for file in ./plugins/**; do
-    [ -e "${file}" ] || continue
-    if test -d "${file}"; then
-        continue
-    fi
-    file_mounts="${file_mounts} --mount type=bind,src=./private/${file},dst=/app/cstrike/addons/sourcemod/${file} \\
+    file_mounts="${file_mounts} --mount type=bind,src=./private/${file},dst=/app/cstrike/${file} \\
     "
 done
 
