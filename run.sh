@@ -2,7 +2,7 @@
 
 shopt -s globstar
 
-image="ghcr.io/goodtrailer/gamesvr-cssource-surf:2025.1006.0"
+image="ghcr.io/goodtrailer/gamesvr-cssource-surf:2026.301.0"
 
 sudo docker pull "${image}"
 
