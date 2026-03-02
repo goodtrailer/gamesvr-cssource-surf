@@ -25,9 +25,9 @@ RUN bsdtar -xvf /sm-ripext.zip -C /app/cstrike
 ADD https://github.com/goodtrailer/bhoptimer/releases/download/v3.5.1.1/bhoptimer.zip /shavit-bhoptimer.zip
 RUN bsdtar -xvf /shavit-bhoptimer.zip -C /app/cstrike
 
-# shavit-myreplay (v1.0.4)
-ADD https://github.com/BoomShotKapow/shavit-myreplay/releases/download/1.0.4/shavit-myreplay-1.0.4-sm1.12.x.zip /shavit-myreplay.zip
-RUN bsdtar -xvf /shavit-myreplay.zip -C /app/cstrike/addons/sourcemod
+# shavit-myreplay (v1.0.4 - goodtrailer fork)
+ADD https://github.com/goodtrailer/shavit-myreplay/releases/download/1.0.4.2/shavit-myreplay.zip /shavit-myreplay.zip
+RUN bsdtar -xvf /shavit-myreplay.zip -C /app/cstrike
 
 # shavit-discord (v1.4-hotfix1 - goodtrailer fork)
 ADD https://github.com/goodtrailer/shavit-discord/releases/download/v1.4-hotfix1/shavit-discord.zip /shavit-discord.zip
