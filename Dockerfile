@@ -29,6 +29,10 @@ RUN bsdtar -xvf /shavit-bhoptimer.zip -C /app/cstrike
 ADD https://github.com/goodtrailer/shavit-myreplay/releases/download/1.0.4.2/shavit-myreplay.zip /shavit-myreplay.zip
 RUN bsdtar -xvf /shavit-myreplay.zip -C /app/cstrike
 
+# shavit-myroute (v1.0.4)
+ADD https://github.com/BoomShotKapow/shavit-myroute/releases/download/1.0.4/shavit-myroute-1.0.4-sm1.12.x.zip /shavit-myroute.zip
+RUN bsdtar -xvf /shavit-myroute.zip -C /app/cstrike/addons/sourcemod
+
 # shavit-discord (v1.4-hotfix1 - goodtrailer fork)
 ADD https://github.com/goodtrailer/shavit-discord/releases/download/v1.4-hotfix1/shavit-discord.zip /shavit-discord.zip
 RUN bsdtar -xvf /shavit-discord.zip -C /app/cstrike
@@ -52,8 +56,8 @@ RUN mkdir temp \
     && mv /temp/plugins/DynamicChannels.smx /app/cstrike/addons/sourcemod/plugins \
     && rm -rf temp
 
-# sm_closestpos (v1.1.1)
-ADD https://github.com/rtldg/sm_closestpos/releases/download/v1.1.1/sm_closestpos-sm1.10-ubuntu-22.04-f848dfc.zip /sm_closestpos.zip
+# sm_closestpos (v??? random untagged build)
+ADD https://github.com/rtldg/sm_closestpos/files/15044074/sm_closestpos-sm1.10-ubuntu-20.04-431883d.zip /sm_closestpos.zip
 RUN bsdtar -xvf /sm_closestpos.zip -C /app/cstrike
 
 # SuppressViewpunch (2025.203.0)
