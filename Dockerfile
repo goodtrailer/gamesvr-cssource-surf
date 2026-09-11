@@ -9,12 +9,12 @@ RUN apt-get update \
 
 RUN mkdir -p /app/cstrike
 
-# Metamod:Source (build 1219)
-ADD https://mms.alliedmods.net/mmsdrop/1.12/mmsource-1.12.0-git1219-linux.tar.gz /metamod.tar.gz
+# Metamod:Source (build 1226)
+ADD https://github.com/alliedmodders/metamod-source/releases/download/1.12.0.1226/mmsource-1.12.0-git1226-linux.tar.gz /metamod.tar.gz
 RUN bsdtar -xvf /metamod.tar.gz -C /app/cstrike
 
-# SourceMod (build 7209)
-ADD https://sm.alliedmods.net/smdrop/1.12/sourcemod-1.12.0-git7209-linux.tar.gz /sourcemod.tar.gz
+# SourceMod (build 7253)
+ADD https://github.com/alliedmodders/sourcemod/releases/download/1.12.0.7253/sourcemod-1.12.0-git7253-linux.tar.gz /sourcemod.tar.gz
 RUN bsdtar -xvf /sourcemod.tar.gz -C /app/cstrike
 
 # sm-ripext (v1.3.1)
@@ -61,8 +61,8 @@ ADD https://github.com/rtldg/sm_closestpos/files/15044074/sm_closestpos-sm1.10-u
 RUN bsdtar -xvf /sm_closestpos.zip -C /app/cstrike
 
 # SuppressViewpunch (2025.203.0)
-ADD https://github.com/goodtrailer/SuppressViewpunch/releases/download/2025.203.0/SuppressViewpunch.zip /suppressviewpunch.zip
-RUN bsdtar -xvf /suppressviewpunch.zip -C /app/cstrike
+# ADD https://github.com/goodtrailer/SuppressViewpunch/releases/download/2025.203.0/SuppressViewpunch.zip /suppressviewpunch.zip
+# RUN bsdtar -xvf /suppressviewpunch.zip -C /app/cstrike
 
 # hide-motd (2025.705.0)
 ADD https://github.com/goodtrailer/hide-motd/releases/download/2025.705.0/hide-motd.zip /hide-motd.zip
